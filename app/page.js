@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 
 const phone = "02284-492935 / 492936";
-const whatsappNumber = "542234388256";
+const whatsappNumber = "542233496769";
 const email = "plusemergencias@hotmail.com";
 
 const whatsappText =
