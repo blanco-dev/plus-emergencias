@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
@@ -430,6 +431,22 @@ function PorQueElegirnos() {
 }
 
 function Contacto() {
+  const [nombre, setNombre] = useState("");
+  const [telefono, setTelefono] = useState("");
+  const [emailContacto, setEmailContacto] = useState("");
+  const [consulta, setConsulta] = useState("");
+
+  const mensajeWhatsApp = `
+Hola Plus Emergencias.
+
+Nombre: ${nombre}
+Teléfono: ${telefono}
+Email: ${emailContacto}
+
+Consulta:
+${consulta}
+`;
+
   return (
     <section id="contacto" className="bg-[#07120d] py-24">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-2">
@@ -442,31 +459,66 @@ function Contacto() {
           <div className="mt-8 space-y-5 text-zinc-200">
             <ContactLine icon={Phone} text={phone} />
             <ContactLine icon={Mail} text={email} />
-            <ContactLine icon={MapPin} text="Roca 2073, Sierras Bayas, Argentina" />
-            <ContactLine icon={MapPin} text="Garay 1455, Mar del Plata, Argentina" />
-            <ContactLine icon={Clock} text="Atención las 24 horas" />
+            <ContactLine
+              icon={MapPin}
+              text="Roca 2073, Sierras Bayas, Argentina"
+            />
+            <ContactLine
+              icon={MapPin}
+              text="Garay 1455, Mar del Plata, Argentina"
+            />
+            <ContactLine
+              icon={Clock}
+              text="Atención las 24 horas"
+            />
           </div>
         </div>
 
-        <form className="rounded-[2rem] border border-white/10 bg-white/5 p-7 backdrop-blur">
+        <div className="rounded-[2rem] border border-white/10 bg-white/5 p-7 backdrop-blur">
+
           <div className="grid gap-4 md:grid-cols-2">
-            <input className="input" placeholder="Nombre" />
-            <input className="input" placeholder="Teléfono" />
+            <input
+              className="input"
+              placeholder="Nombre"
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)}
+            />
+
+            <input
+              className="input"
+              placeholder="Teléfono"
+              value={telefono}
+              onChange={(e) => setTelefono(e.target.value)}
+            />
           </div>
-          <input className="input mt-4" placeholder="Email" />
-          <textarea className="input mt-4 h-36" placeholder="Consulta" />
+
+          <input
+            className="input mt-4"
+            placeholder="Email"
+            value={emailContacto}
+            onChange={(e) => setEmailContacto(e.target.value)}
+          />
+
+          <textarea
+            className="input mt-4 h-36"
+            placeholder="Consulta"
+            value={consulta}
+            onChange={(e) => setConsulta(e.target.value)}
+          />
 
           <a
             href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-              whatsappText
+              mensajeWhatsApp
             )}`}
             target="_blank"
+            rel="noopener noreferrer"
             className="mt-5 flex w-full items-center justify-center gap-3 rounded-full bg-[#0b7a3b] px-6 py-4 font-black transition hover:bg-[#0f9b4c]"
           >
             <MessageCircle size={20} />
             Enviar mensaje
           </a>
-        </form>
+
+        </div>
       </div>
 
       <footer className="mx-auto mt-16 max-w-7xl border-t border-white/10 px-5 pt-8 text-center text-sm text-zinc-500">
