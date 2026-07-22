@@ -23,10 +23,9 @@ import {
   CalendarDays,
 } from "lucide-react";
 
-const phone = "02284-492935 / 492936";
-const whatsappNumber = "542233496769";
-const email = "plusemergencias@hotmail.com";
-
+const phone = "223-4820390/91";
+const whatsappNumber = "542234217226";
+const email = "plusemergencias24@gmail.com";
 const whatsappText =
   "Hola Plus Emergencias, quisiera consultar por un servicio.";
 
@@ -459,10 +458,6 @@ ${consulta}
           <div className="mt-8 space-y-5 text-zinc-200">
             <ContactLine icon={Phone} text={phone} />
             <ContactLine icon={Mail} text={email} />
-            <ContactLine
-              icon={MapPin}
-              text="Roca 2073, Sierras Bayas, Argentina"
-            />
             <ContactLine
               icon={MapPin}
               text="Garay 1455, Mar del Plata, Argentina"
