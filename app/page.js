@@ -242,7 +242,7 @@ Flota compuesta por unidades de traslado y ambulancias equipadas para brindar co
             <ImageCard
               src="/ambulancias-flota.jpeg"
               alt="Flota de ambulancias Plus Emergencias"
-              className="col-span-2 h-72"
+              className="col-span-2 h-72 opacity-70"
             />
             <ImageCard
               src="/ambulancia-lateral.jpeg"
