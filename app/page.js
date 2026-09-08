@@ -23,7 +23,7 @@ import {
   CalendarDays,
 } from "lucide-react";
 
-const phone = "223-4820390/91";
+const phone = "223-4820390";
 const whatsappNumber = "542234217226";
 const email = "plusemergencias24@gmail.com";
 const whatsappText =
